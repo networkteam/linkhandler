@@ -133,6 +133,9 @@ class Handler {
 			$recordArray = $GLOBALS['TSFE']->sys_page->getRawRecord($recordTableName, $recordArray[$l18nPointer]);
 		}
 
+		if (!is_array($recordArray)) {
+			$recordArray = array();
+		}
 		$cache[$parameterHash] = $recordArray;
 		return $recordArray;
 	}
